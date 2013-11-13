@@ -7,7 +7,7 @@ public abstract class User {
 	public User(String userID, String forename, String surname) {
 		this.userID = userID;
 		this.forename = forename;
-		this.surname = surname;l
+		this.surname = surname;
 	}
 	
 	public String getuserID() {
