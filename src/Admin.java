@@ -5,4 +5,10 @@ public class Admin extends User {
 		super(userID, forename, surname);
 	}
 	
+	/*
+	 * Method to add a session to the timetable
+	 */
+	public void addSession(){
+		
+	}
 }
