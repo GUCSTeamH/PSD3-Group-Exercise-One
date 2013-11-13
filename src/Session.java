@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class Session {
+public abstract class Session {
 	private boolean repeated;
 	private boolean compulsory;
 	private int	tutorNum;
