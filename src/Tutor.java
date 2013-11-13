@@ -27,10 +27,10 @@ public class Tutor extends User {
 	
 	public void setStudent(boolean bool){
 		student = bool;
-	]
+	}
 	
 	// adds tutor if there is no conflict
-	public addTutorSession(Session s){
+	public void addTutorSession(Session s){
 		if (checkConflict(s)){
 			sessions.add(s);
 		}
@@ -38,7 +38,7 @@ public class Tutor extends User {
 	
 	// Checks to see if tutor is available at time
 	public boolean checkConflict(Session s){
-		for (Session sess : sessions){
+		/*for (Session sess : sessions){
 			//if there is a clash:
 				//return false
 		}
@@ -46,7 +46,7 @@ public class Tutor extends User {
 			// for Session in student timetable
 				// if there is a clash
 					// return false
-		}
+		}*/
 		return true;
 	}
 
