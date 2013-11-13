@@ -1,9 +1,11 @@
+import java.util.ArrayList;
+
 
 public class TimeSlot {
 	private Time begin;
 	private Time end;
 	private boolean available;
-	
+	private Session booked;
 	public TimeSlot(Time b,Time e){
 		begin=b;
 		end=e;
@@ -26,8 +28,13 @@ public class TimeSlot {
 		return available;
 	}
 	
-	public void book(){
+	public void book(Session s){
 		available=false;
+		booked=s;
+	}
+	public void unbook(){
+		available=true;
+		booked=null;
 	}
 	
 	public Time getBegin() {
