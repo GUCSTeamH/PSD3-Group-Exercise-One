@@ -13,7 +13,10 @@ public abstract class Session {
 	private int capacity;
 	private int studentNum;
 	
-	public Session(boolean r,boolean c,String l, String crs, int bh,int bm,int eh,int em, int[] y,int cap){
+	/*
+	 * Constructor to initialise every class member with integer times
+	 */	
+	public Session(boolean r,boolean c,String l, String crs, int bh, int bm, int eh, int em, int[] y, int cap){
 		repeated=r;
 		compulsory=c;
 		capacity=cap;
@@ -29,6 +32,10 @@ public abstract class Session {
 		}
 	}
 	
+	
+	/*
+	 * Constructor to initialise every class member with string times
+	 */	
 	public Session(boolean r,boolean c,String l, String crs, String b,String e, int[] y,int cap){
 		repeated=r;
 		compulsory=c;

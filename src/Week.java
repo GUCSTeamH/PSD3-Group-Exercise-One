@@ -1,4 +1,5 @@
 import java.util.*;
+
 class Week {
 	private ArrayList<Day> days;
 	
