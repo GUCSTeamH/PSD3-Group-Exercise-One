@@ -3,7 +3,6 @@ import java.util.*;
 public abstract class Session {
 	private boolean repeated;
 	private boolean compulsory;
-	private int	tutorNum;
 	private String	location;
 	private String	course;
 	private String	name;
@@ -14,10 +13,9 @@ public abstract class Session {
 	private int capacity;
 	private int studentNum;
 	
-	public Session(boolean r,boolean c,int t, String l, String crs, int bh,int bm,int eh,int em, int[] y,int cap){
+	public Session(boolean r,boolean c,String l, String crs, int bh,int bm,int eh,int em, int[] y,int cap){
 		repeated=r;
 		compulsory=c;
-		tutorNum=t;
 		capacity=cap;
 		studentNum=0;
 		location=l;
@@ -31,10 +29,9 @@ public abstract class Session {
 		}
 	}
 	
-	public Session(boolean r,boolean c,int t, String l, String crs, String b,String e, int[] y,int cap){
+	public Session(boolean r,boolean c,String l, String crs, String b,String e, int[] y,int cap){
 		repeated=r;
 		compulsory=c;
-		tutorNum=t;
 		location=l;
 		course=crs;
 		studentNum=0;
@@ -76,14 +73,6 @@ public abstract class Session {
 
 	public void setCompulsory(boolean compulsory) {
 		this.compulsory = compulsory;
-	}
-
-	public int getTutorNum() {
-		return tutorNum;
-	}
-
-	public void setTutorNum(int tutors) {
-		this.tutorNum = tutors;
 	}
 
 	public String getLocation() {
