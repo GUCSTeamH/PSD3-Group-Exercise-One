@@ -1,5 +1,5 @@
 
-public abstract class User {
+public abstract class User implements UserAuth {
 	private String userID;
 	private String forename;
 	private String surname;
@@ -32,6 +32,15 @@ public abstract class User {
 	
 	public void setSurname(String surname) {
 		this.surname = surname;
+	}
+	
+	public boolean authenticate(String user, String pass){
+		if (pass.length() >6 )
+			return true;
+		else {
+			System.out.println("invalid username / password");
+			return false;
+		}
 	}
 	
 }
