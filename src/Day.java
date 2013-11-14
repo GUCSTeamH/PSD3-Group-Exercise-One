@@ -9,9 +9,10 @@ public class Day {
 		slots=new ArrayList<Session>();
 		//this should be done in TimeSlot class (remember cohesion? )
 		// changed to sessions instead of timeslots
-		for(int i=0;i<9;i++){
+		// shouldn't need to add sessions/timeslots. only add them if they exist
+/*		for(int i=0;i<9;i++){
 			slots.add(new Session(new Time(i+9,00),new Time(i+10,00)));
-		}
+		}*/
 	}
 
 	
@@ -19,6 +20,8 @@ public class Day {
 	//this method needs to return a boolean istead of printing "Session booked/not booked"
 	//if it stays this way we must comare strings to check, otherwise compare
 	//booleans which is much better
+	
+	// this will need to be changed for session instead of timeslot
 	public void checkBook(Time b,Time e,Session s){
 		int diff=b.getHour()-e.getHour();
 		boolean c=false;
@@ -57,7 +60,9 @@ public class Day {
 		this.slots = slots;
 	}
 
-	
+	public void addSession(Session s){
+		slots.add(s);
+	}
 	
 	//return boolean as well
 	public void unbook(Session s){
