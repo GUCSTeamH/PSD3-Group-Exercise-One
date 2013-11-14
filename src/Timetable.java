@@ -26,6 +26,10 @@ public class Timetable {
 		return timetable;
 	}
 	
+	public ArrayList<Week> getSemester(int semester){
+		return (semester==1 ? semesterOne : semesterTwo);
+	}
+	
 	public Week getWeek(int semester, int week){
 		return (semester==1 ? semesterOne.get(week) : semesterTwo.get(week));
 	}
