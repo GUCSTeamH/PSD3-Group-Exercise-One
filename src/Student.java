@@ -19,7 +19,7 @@ public class Student extends User {
 		coursesTaken=new LinkedList<StudentCourse>();
 	}
 	
-	public Student (String guID, String id,String fn, String ln, String mail,int y, LinkedList<Course> c, LinkedList<LabSession> lab){
+	public Student (String guID, String id,String fn, String ln, String mail,int y, LinkedList<StudentCourse> c, LinkedList<LabSession> lab){
 		super(id, fn, ln);
 		this.guID=guID;
 		year=y;
