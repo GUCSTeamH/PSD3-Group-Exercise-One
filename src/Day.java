@@ -7,11 +7,19 @@ public class Day {
 
 	public Day(){	
 		slots=new ArrayList<Session>();
-		// don't need to fill the day with empty sessions.
+		//this should be done in TimeSlot class (remember cohesion? )
+		// changed to sessions instead of timeslots
+		for(int i=0;i<9;i++){
+			slots.add(new Session(new Time(i+9,00),new Time(i+10,00)));
+		}
 	}
 
-/* shouldn't have to deal with conflicts ? */
-/*	public void checkBook(Time b,Time e,Session s){
+	
+	
+	//this method needs to return a boolean istead of printing "Session booked/not booked"
+	//if it stays this way we must comare strings to check, otherwise compare
+	//booleans which is much better
+	public void checkBook(Time b,Time e,Session s){
 		int diff=b.getHour()-e.getHour();
 		boolean c=false;
 		if (diff>1){
@@ -39,7 +47,7 @@ public class Day {
 				System.out.println("Unable to book session.");}
 			
 		}
-	}*/
+	}
 
 	public ArrayList<Session> getSlots() {
 		return slots;
@@ -49,8 +57,10 @@ public class Day {
 		this.slots = slots;
 	}
 
-/* shouldn't have to unbook */	
-/*	public void unbook(Session s){
+	
+	
+	//return boolean as well
+	public void unbook(TimeSlot s){
 		if(!slots.get(s.getBegin().getHour()-9).isAvailable()){
 			slots.get(s.getBegin().getHour()-9).unbook();
 			System.out.println("Session freed.");}

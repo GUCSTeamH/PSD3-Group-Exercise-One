@@ -11,5 +11,7 @@ public class Timetable {
 	public Week getWeek(int week){
 		return weeks.get(week);
 	}
+	//TODO
+	//you never set/add a week to weeks.
 	
 }

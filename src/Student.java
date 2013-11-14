@@ -3,6 +3,9 @@ import java.util.LinkedList;
 
 public class Student extends User {
 	public String guID;
+	//no name, barcode of student card?
+		//guid are for students, i assumed userid in userclass would be barcode as everyone has a card with a barcode number on it (Which is also what the attendance scanner uses)
+	
 	private LinkedList<StudentCourse> coursesTaken;
 	
 	
