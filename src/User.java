@@ -1,4 +1,3 @@
-
 public abstract class User implements UserAuth {
 	private String userID;
 	private String forename;
@@ -35,7 +34,7 @@ public abstract class User implements UserAuth {
 	}
 	
 	public boolean authenticate(String user, String pass){
-		if (pass.length() >6 )
+		if (pass.length() >=6 )
 			return true;
 		else {
 			System.out.println("invalid username / password");
