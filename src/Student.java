@@ -25,7 +25,7 @@ public class Student extends User {
 		year=y;
 		email=mail;
 		coursesTaken=c;
-		labGroups=c;
+		labGroups=lab;
 	}
 	
 	public void setGUID(String guID){
