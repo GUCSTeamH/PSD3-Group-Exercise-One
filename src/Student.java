@@ -70,7 +70,7 @@ public class Student extends User {
 	}
 	
 	public void addLab(LabSession lab){
-		labGroup.add(lab);
+		labGroups.add(lab);
 	}
 	
 	
