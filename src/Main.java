@@ -4,14 +4,27 @@ import java.util.Scanner;
 
 public class Main {
 	public static void main(String args[]) throws IOException {
-		System.out.println("Welcome dear user. Please enter your username and password.");
+		System.out.println("Welcome dear user. Please enter your username and password");
 		System.out.println("username: ");
 		Scanner scanner = new Scanner(System.in);
 		String username=scanner.next();
 		System.out.println("password: ");
 		String password=scanner.next();
 		System.out.println(username+" "+ password);
-		login(username,password);
+
+		User user= new User(username, "Harry", "Potter");
+		if (user.authenticate(username, password))
+			System.out.println("authentication successful");
+		else
+			while (!user.authenticate(username, password)){
+				System.out.println("invalid login");
+				System.out.println("username: ");
+				scanner = new Scanner(System.in);
+				username=scanner.next();
+				System.out.println("password: ");
+				password=scanner.next();
+
+			}
 		Exporter x1=null;
 		Exporter x2=null;
 		try{
@@ -36,7 +49,7 @@ public class Main {
 		for(StudentCourse c:students.getStudentRecord("1234")){
 			x1.export(c.toString());
 		}
-		
+
 		CourseDb courses=CourseDb.getStudentDb();
 		Course course1=new Course("PSD2");
 		CourseStudent cs1=new CourseStudent("Terry","T","1234545",12,13);
@@ -47,26 +60,6 @@ public class Main {
 		for(CourseStudent cs:courses.getCourseRecord(course1.name)){
 			x2.export(cs.toString());
 		}
-		
-	}
-	
-	
-	public static void login(String un,String p){
-		if(un.equalsIgnoreCase("tutor")&&p.equalsIgnoreCase("tutor")){
-			System.out.println("tutor login");
-		}
-		else if(un.equalsIgnoreCase("lecturer")&&p.equalsIgnoreCase("lecturer")){
-			System.out.println("lecturer login");
-		}
-		else if(un.equalsIgnoreCase("student")&&p.equalsIgnoreCase("student")){
-			System.out.println("tutor login");
-		}
-		else if(un.equalsIgnoreCase("ta")&&p.equalsIgnoreCase("ta")){
-			System.out.println("ta");
-		}
-		else{
-			System.out.println("unsuccessful login");
-		}
-	}
 
+	}
 }
