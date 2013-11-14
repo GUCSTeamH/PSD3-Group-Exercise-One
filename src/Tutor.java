@@ -73,5 +73,22 @@ public class Tutor extends User {
 		}
 
 	}
+	
+	public void markAttendanceManually(Session s){
+		Scanner scan;
+		
+		for (Student stud : s.getListStudents()){
+			System.out.print(stud.getuserID() + ":/t");
+			scan = new Scanner(System.in);
+			s.getAttendanceList().changeAttendance(stud, scan.next());
+			System.out.print("/n");
+		}
+		
+	}
+	
+	public void changeSingleAttendance(Session s, Student stud){
+		Scanner scan = new Scanner(System.in);
+		s.getAttendanceList().changeAttendance(stud, scan.next());
+	}
 
 }
