@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class Main {
 	public static void main(String args[]) throws IOException {
-		System.out.println("Welcome dear user. Please enter your username and password");
+		System.out.println("Welcome dear user. Please enter your username and password.");
 		System.out.println("username: ");
 		Scanner scanner = new Scanner(System.in);
 		String username=scanner.next();
