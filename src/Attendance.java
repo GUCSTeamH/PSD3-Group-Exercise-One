@@ -28,15 +28,15 @@ public class Attendance{
 	// Moves students from absent list if attendance changes.
 	public void changeAttendance(Student stud, String attendance){
 		// Checks in the absent list first. (Most likely scenario)
-		for (int i = 0; i < getAbsent().size(); i++){
-			if (getAbsent().get(i).getuserID().equals(stud.getuserID())){
+		for (int i = 0; i < absent.size(); i++){
+			if (absent.get(i).getuserID().equals(stud.getuserID())){
 				if (attendance.equalsIgnoreCase("present")){
-					getPresent().add(getAbsent().get(i));
-					getAbsent().remove(i);
+					present.add(absent.get(i));
+					absent.remove(i);
 				}
 				else if (attendance.equalsIgnoreCase("mv")){
-					getMV().add(getAbsent().get(i));
-					getAbsent().remove(i);
+					mv.add(absent.get(i));
+					absent.remove(i);
 				}
 				return;
 			}
@@ -47,29 +47,29 @@ public class Attendance{
 		 * 		(a) altered a students attendance that has previously been changed.
 		 *		(b) entered an incorrect student
 		 */
-		for (int i = 0; i < getPresent().size(); i++){
-			if (getPresent().get(i).getuserID().equals(stud.getuserID())){
+		for (int i = 0; i < present.size(); i++){
+			if (present.get(i).getuserID().equals(stud.getuserID())){
 				if (attendance.equalsIgnoreCase("absent")){
-					getAbsent().add(getPresent().get(i));
-					getPresent().remove(i);
+					absent.add(present.get(i));
+					present.remove(i);
 				}
 				else if (attendance.equalsIgnoreCase("mv")){
-					getMV().add(getAbsent().get(i));
-					getPresent().remove(i);
+					mv.add(absent.get(i));
+					present.remove(i);
 				}
 				return;
 			}
 		}
 		
-		for (int i = 0; i < getMV().size(); i++){
-			if (getMV().get(i).getuserID().equals(stud.getuserID())){
+		for (int i = 0; i < mv.size(); i++){
+			if (mv.get(i).getuserID().equals(stud.getuserID())){
 				if (attendance.equalsIgnoreCase("absent")){
-					getAbsent().add(getPresent().get(i));
-					getMV().remove(i);
+					absent.add(present.get(i));
+					mv.remove(i);
 				}
 				else if (attendance.equalsIgnoreCase("present")){
-					getPresent().add(getMV().get(i));
-					getMV().remove(i);
+					present.add(mv.get(i));
+					mv.remove(i);
 				}
 				return;
 			}
