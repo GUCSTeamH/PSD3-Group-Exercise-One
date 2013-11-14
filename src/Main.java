@@ -3,25 +3,64 @@ import java.util.Scanner;
 
 
 public class Main {
+	
+
+public static void header(){
+	System.out.println("::::::::::::::::::::::::::::::");
+for(int i=0;i<3;i++){
+	System.out.println("::                          ::");
+}
+	System.out.println("::::    Group Exercise    ::::");
+	for(int i=0;i<3;i++){
+		System.out.println("::                          ::");
+	}
+	System.out.println("::::::::::::::::::::::::::::::");
+
+}
+public static void loginHeader(){
+	System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
+	System.out.println(">           Log In           >");
+	System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
+	System.out.println("");
+}
+public static void MenuHeader(){
+	System.out.println("<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<");
+	System.out.println("<            Menu            <");
+	System.out.println("<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<");
+}
+public static void CustomHeader(String msg){
+	System.out.println("------------------------------");
+	System.out.println("-  "+msg);
+	System.out.println("------------------------------");
+	System.out.println("");
+}
 	public static void main(String args[]) throws IOException {
+		header();
+		loginHeader();
+		
 		System.out.println("Welcome dear user. Please enter your username and password");
-		System.out.println("username: ");
+		System.out.println("");
+		System.out.print("Username: ");
 		Scanner scanner = new Scanner(System.in);
 		String username=scanner.next();
-		System.out.println("password: ");
+		System.out.println("");
+		System.out.print("Password: ");
 		String password=scanner.next();
-		System.out.println(username+" "+ password);
+		System.out.println("");
+		System.out.println(">>> Entered:"+username+" "+ password+" <<<");
 
 		Lecturer user= new Lecturer(username, "Harry", "Potter");
 		while (!user.authenticate(username, password)){
 				System.out.println("invalid login");
-				System.out.println("username: ");
+				System.out.print("Username: ");
 				scanner = new Scanner(System.in);
 				username=scanner.next();
-				System.out.println("password: ");
+				System.out.println("");
+				System.out.print("Password: ");
 				password=scanner.next();
+				System.out.println("");
 		}
-		System.out.println("authentication successful");
+		System.out.println("                                 (authentication successful)");
 		Exporter x1=null;
 		Exporter x2=null;
 		try{
@@ -64,5 +103,6 @@ public class Main {
 			x2.export(cs.toString());
 		}
 
+		MenuHeader();
 	}
 }
