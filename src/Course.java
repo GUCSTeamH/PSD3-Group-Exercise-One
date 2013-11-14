@@ -14,6 +14,11 @@ public class Course {
 		
 	}
 
+	public Course(String n){
+		name = n;
+		students=new LinkedList<CourseStudent>();
+		name = "";
+	}
 	public void addStudent(CourseStudent s){
 		students.add(s);
 	}
@@ -28,5 +33,13 @@ public class Course {
 	
 	public String getCourseID(){
 		return courseID;
+	}
+	
+	public String getCourseName(){
+		return name;
+	}
+	
+	public void setCourseName(String n){
+		this.name = n;
 	}
 }

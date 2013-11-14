@@ -25,14 +25,14 @@ public class Main {
 		}
 
 		StudentDb students=StudentDb.getStudentDb();
-		Student s1=new Student("1234");
+		Student s1=new Student("1234", "12345678536014", "john", "smith");
 		StudentCourse c1=new StudentCourse("PSD3", "1", 19, 70, 89);
 		StudentCourse c2=new StudentCourse("ADS3", "2", 19, 70, 89);
 		StudentCourse c3=new StudentCourse("PS3", "3", 19, 70, 89);
 		s1.getCourses().add(c1);
 		s1.getCourses().add(c2);
 		s1.getCourses().add(c3);
-		students.addRecord(s1.studentID, s1.getCourses());
+		students.addRecord(s1.getGUID(), s1.getCourses());
 		for(StudentCourse c:students.getStudentRecord("1234")){
 			x1.export(c.toString());
 		}

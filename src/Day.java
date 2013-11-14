@@ -71,5 +71,5 @@ public class Day {
 			System.out.println("Session freed.");}
 		else
 			System.out.println("Session is already free.");
-	}*/
+	}
 }

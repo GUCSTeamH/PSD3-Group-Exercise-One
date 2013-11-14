@@ -9,7 +9,7 @@ public class Student extends User {
 	private LinkedList<StudentCourse> coursesTaken;
 	
 	
-	public Student(String guID, String, userID, String forename, String surname){
+	public Student(String guID, String userID, String forename, String surname){
 		super(userID, forename, surname);
 		this.guID = guID;
 		coursesTaken=new LinkedList<StudentCourse>();

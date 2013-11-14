@@ -1,4 +1,5 @@
-import java.util.ArrayList;
+import java.util.*;
+import java.io.FileReader;
 
 public class Tutor extends User {
 	
@@ -48,6 +49,22 @@ public class Tutor extends User {
 					// return false
 		}*/
 		return true;
+	}
+	
+	
+	public void markAttendanceCSV(String filename, Session s){
+		FileReader reader = new FileReader(filename);
+		Scanner in = new Scanner(reader);
+		while(in.hasNext()){
+			String line = in.nextLine();
+			String[] data = line.split(",");
+			for(Student stud: s.getListStudents()){
+				if (stud.getuserID()==data[0]){
+					s.getAttendanceList().changeAttendance(stud, "present");
+					break;
+				}
+			}
+		}
 	}
 
 }

@@ -12,6 +12,7 @@ public abstract class Session {
 	private ArrayList<Student> listStudents;
 	private int capacity;
 	private int studentNum;
+	private Attendance attendanceList;
 	
 	/*
 	 * Constructor to initialise every class member with integer times
@@ -30,6 +31,7 @@ public abstract class Session {
 		for(int i=0;i<y.length;i++){
 			years.add(y[i]);
 		}
+		attendanceList = new Attendance(this);
 	}
 	
 	
@@ -50,6 +52,7 @@ public abstract class Session {
 		for(int i=0;i<y.length;i++){
 			years.add(y[i]);
 		}
+		attendanceList = new Attendance(this);
 	}
 	
 	public void addStudent(Student s) throws CapacityException{
@@ -136,5 +139,9 @@ public abstract class Session {
 	
 	public int getNumStudent(){
 		return studentNum;
+	}
+	
+	public Attendance getAttendanceList(){
+		return attendanceList;
 	}
 }
