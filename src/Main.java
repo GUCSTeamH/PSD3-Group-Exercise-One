@@ -13,18 +13,15 @@ public class Main {
 		System.out.println(username+" "+ password);
 
 		Lecturer user= new Lecturer(username, "Harry", "Potter");
-		if (user.authenticate(username, password))
-			System.out.println("authentication successful");
-		else
-			while (!user.authenticate(username, password)){
+		while (!user.authenticate(username, password)){
 				System.out.println("invalid login");
 				System.out.println("username: ");
 				scanner = new Scanner(System.in);
 				username=scanner.next();
 				System.out.println("password: ");
 				password=scanner.next();
-
-			}
+		}
+		System.out.println("authentication successful");
 		Exporter x1=null;
 		Exporter x2=null;
 		try{
