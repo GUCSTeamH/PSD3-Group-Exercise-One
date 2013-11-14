@@ -21,7 +21,7 @@ public class Student extends User {
 	
 	public Student (String guID, String id,String fn, String ln, String mail,int y, LinkedList<Course> c, LinkedList<LabSession> lab){
 		super(id, fn, ln);
-		this.guID=guID
+		this.guID=guID;
 		year=y;
 		email=mail;
 		coursesTaken=c;
