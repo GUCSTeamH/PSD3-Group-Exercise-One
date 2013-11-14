@@ -3,8 +3,8 @@ import java.util.LinkedList;
 
 public class Student extends User {
 	
-	String email;
-	int year;
+	private String email;
+	private int year;
 	private LinkedList<LabSession> labGroups;
 	public String guID;
 	//no name, barcode of student card?
@@ -21,14 +21,14 @@ public class Student extends User {
 		courseMarks=new LinkedList<StudentCourse>();
 	}
 	
-	public Student (String guID, String id,String fn, String ln, String mail,int y, LinkedList<Course> c, LinkedList<LabSession> lab){
+	public Student (String guID, String id,String fn, String ln, String mail,int y, LinkedList<StudentCourse> sc, LinkedList<Course> c, LinkedList<LabSession> lab){
 		super(id, fn, ln);
 		this.guID=guID;
 		year=y;
 		email=mail;
 		coursesTaken=c;
 		labGroups=lab;
-		courseMarks=new LinkedList<StudentCourse>();
+		courseMarks=sc;
 	}
 	
 	public void setGUID(String guID){

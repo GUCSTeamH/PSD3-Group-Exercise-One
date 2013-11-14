@@ -53,18 +53,25 @@ public class Tutor extends User {
 	
 	
 	public void markAttendanceCSV(String filename, Session s){
-		FileReader reader = new FileReader(filename);
-		Scanner in = new Scanner(reader);
-		while(in.hasNext()){
-			String line = in.nextLine();
-			String[] data = line.split(",");
-			for(Student stud: s.getListStudents()){
-				if (stud.getuserID()==data[0]){
-					s.getAttendanceList().changeAttendance(stud, "present");
-					break;
+		try{
+			FileReader reader = new FileReader(filename);
+			Scanner in = new Scanner(reader);
+			while(in.hasNext()){
+				String line = in.nextLine();
+				String[] data = line.split(",");
+				for(Student stud: s.getListStudents()){
+					if (stud.getuserID()==data[0]){
+						s.getAttendanceList().changeAttendance(stud, "present");
+						break;
+					}
 				}
 			}
 		}
+		catch (Exception e){
+			System.out.println("file read failed");
+			return;
+		}
+
 	}
 
 }

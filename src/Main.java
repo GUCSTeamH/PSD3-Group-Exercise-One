@@ -12,7 +12,7 @@ public class Main {
 		String password=scanner.next();
 		System.out.println(username+" "+ password);
 
-		User user= new User(username, "Harry", "Potter");
+		Lecturer user= new Lecturer(username, "Harry", "Potter");
 		if (user.authenticate(username, password))
 			System.out.println("authentication successful");
 		else
