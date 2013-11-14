@@ -60,7 +60,7 @@ public class Day {
 	
 	
 	//return boolean as well
-	public void unbook(TimeSlot s){
+	public void unbook(Session s){
 		if(!slots.get(s.getBegin().getHour()-9).isAvailable()){
 			slots.get(s.getBegin().getHour()-9).unbook();
 			System.out.println("Session freed.");}
