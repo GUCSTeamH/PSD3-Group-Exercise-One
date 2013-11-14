@@ -57,6 +57,10 @@ public abstract class Session {
 		studentNum++;
 	}
 	
+	public ArrayList<Student> getListStudents() {
+		return listStudents;
+	}
+	
 	public void setListStudents(ArrayList<Student> listStudents) {
 		this.listStudents = listStudents;
 		studentNum=listStudents.size();
